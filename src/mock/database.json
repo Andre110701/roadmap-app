@@ -1,0 +1,12 @@
+{
+  "modules": [
+    {
+      "id": "d18b8624a0f5f721da7b82365fc562dd",
+      "name": "Angular"
+    },
+    {
+      "id": "040efe7178c696e55f6e4533c5a7adf0",
+      "name": "React"
+    }
+  ]
+}
