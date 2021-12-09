@@ -1,12 +1,54 @@
 {
   "modules": [
     {
-      "id": "d18b8624a0f5f721da7b82365fc562dd",
+      "id": "1",
       "name": "Angular"
     },
     {
-      "id": "040efe7178c696e55f6e4533c5a7adf0",
+      "id": "2",
       "name": "React"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "1",
+      "parent_module_id": "1",
+      "name": "PlayList 01",
+      "videos": [
+        {
+          "id": "1",
+          "duration": "5 min",
+          "url": "https://www.youtube.com/watch?v=NCrWXZtlc7Q&list=PLdPPE0hUkt0rPyAkdhHIIquKbwrGUkvw3&index=1",
+          "description": "Introdução Angular",
+          "isComplete": false
+        },
+        {
+          "id": "2",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=3awrN3uDDCY&list=PLdPPE0hUkt0rPyAkdhHIIquKbwrGUkvw3&index=2",
+          "description": "",
+          "isComplete": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "parent_module_id": "2",
+      "name": "PlayList 02",
+      "videos": [
+        {
+          "id": "1",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=FXqX7oof0I4&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&index=1",
+          "description": ""
+        },
+        {
+          "id": "2",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=Jg6JaEjovJk&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&index=2",
+          "description": ""
+        }
+      ]
     }
   ]
 }

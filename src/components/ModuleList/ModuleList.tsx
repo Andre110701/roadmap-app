@@ -1,42 +1,66 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { Component } from 'react'
+import { getModulesList, setModuleId } from '../../actions/moduleListActions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { Models, List } from '../ModuleList/ModuleStyle'
 
 type ModuleType = {
   id: string;
   name: string;
 }
 
-export default function ModuleList() {
+type ModuleListProps = {
+  getModulesList: () => void;
+  modulesList: ModuleType[];
+  setModuleId: (moduleId: string) => void;
+}
 
-  const [modulesList, setModulesList] = useState([])
+class ModuleList extends Component<ModuleListProps> {
 
-  useEffect(() => {
-    console.log('carregou')
-    getModulesList()
-  }, [])
-
-  async function getModulesList() {
-
-    const response = await axios.get("http://localhost:3003/modules")
-    setModulesList(response.data)
-    console.log(response.data)
+  componentDidMount() {
+    this.props.getModulesList()
   }
 
+  handleClick(id: string) {
+    console.log("cliquei", id)
+    this.props.setModuleId(id)
+  }
+  /* componentDidUpdate() {
+    console.log(this.props)
+  } */
+  render() {
+    const modulesList = this.props.modulesList || []
+    console.log(modulesList)
+    return (
 
+      <div>
+        {modulesList.length > 0 ?
+          <List>
+            <ul>
+              {modulesList.map((module: ModuleType) => (
+                <Models>
+                  <li key={module.id} onClick={() => this.handleClick(module.id)}>
+                    {module.name}
+                  </li>
+                </Models>
+              ))}
+            </ul>
+          </List>
+          : false
+        }
+      </div>
 
-
-  return (
-    <div>
-      {modulesList.length > 0 ?
-        <ul>
-          {modulesList.map((module: ModuleType) => (
-            <li key={module.id}>
-              {module.name}
-            </li>
-          ))}
-        </ul>
-        : false
-      }
-    </div>
-  )
+    )
+  }
 }
+
+const mapStateToProps = (state: any) => (
+  {
+    modulesList: state.moduleListReducer.modulesList,
+    moduleId: state.moduleListReducer.moduleId
+  }
+)
+
+const mapDispatchToProps = (dispatch: any) => bindActionCreators({ getModulesList, setModuleId }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(ModuleList)
