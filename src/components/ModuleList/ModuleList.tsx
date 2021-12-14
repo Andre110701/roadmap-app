@@ -25,9 +25,6 @@ class ModuleList extends Component<ModuleListProps> {
     console.log("cliquei", id)
     this.props.setModuleId(id)
   }
-  /* componentDidUpdate() {
-    console.log(this.props)
-  } */
   render() {
     const modulesList = this.props.modulesList || []
     console.log(modulesList)
@@ -38,8 +35,8 @@ class ModuleList extends Component<ModuleListProps> {
           <List>
             <ul>
               {modulesList.map((module: ModuleType) => (
-                <Models>
-                  <li key={module.id} onClick={() => this.handleClick(module.id)}>
+                <Models key={module.id}>
+                  <li onClick={() => this.handleClick(module.id)}>
                     {module.name}
                   </li>
                 </Models>
@@ -49,7 +46,6 @@ class ModuleList extends Component<ModuleListProps> {
           : false
         }
       </div>
-
     )
   }
 }

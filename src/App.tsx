@@ -14,7 +14,6 @@ export default function App() {
         <Article>
           <PlayList />
         </Article>
-
       </Body>
     </>
   );

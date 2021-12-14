@@ -2,11 +2,28 @@
   "modules": [
     {
       "id": "1",
-      "name": "Angular"
+      "name": "Angular",
+      "isComplete": false
     },
     {
       "id": "2",
-      "name": "React"
+      "name": "React",
+      "isComplete": false
+    },
+    {
+      "id": "3",
+      "name": "Html e Css",
+      "isComplete": false
+    },
+    {
+      "id": "4",
+      "name": "JavaScript",
+      "isComplete": false
+    },
+    {
+      "id": "5",
+      "name": "Package Managers",
+      "isComplete": false
     }
   ],
   "playlists": [
@@ -14,19 +31,20 @@
       "id": "1",
       "parent_module_id": "1",
       "name": "PlayList 01",
+      "isComplete": false,
       "videos": [
         {
           "id": "1",
           "duration": "5 min",
-          "url": "https://www.youtube.com/watch?v=NCrWXZtlc7Q&list=PLdPPE0hUkt0rPyAkdhHIIquKbwrGUkvw3&index=1",
-          "description": "Introdução Angular",
+          "url": "https://www.youtube.com/watch?v=NCrWXZtlc7Q",
+          "description": "Introdução Angular 01",
           "isComplete": false
         },
         {
           "id": "2",
           "duration": "",
-          "url": "https://www.youtube.com/watch?v=3awrN3uDDCY&list=PLdPPE0hUkt0rPyAkdhHIIquKbwrGUkvw3&index=2",
-          "description": "",
+          "url": "https://www.youtube.com/watch?v=3awrN3uDDCY",
+          "description": "Introdução Angular 02",
           "isComplete": false
         }
       ]
@@ -35,18 +53,87 @@
       "id": "2",
       "parent_module_id": "2",
       "name": "PlayList 02",
+      "isComplete": false,
       "videos": [
         {
           "id": "1",
           "duration": "",
-          "url": "https://www.youtube.com/watch?v=FXqX7oof0I4&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&index=1",
-          "description": ""
+          "url": "https://www.youtube.com/watch?v=FXqX7oof0I4",
+          "description": "Introdução React 01",
+          "isComplete": false
         },
         {
           "id": "2",
           "duration": "",
-          "url": "https://www.youtube.com/watch?v=Jg6JaEjovJk&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&index=2",
-          "description": ""
+          "url": "https://www.youtube.com/watch?v=Jg6JaEjovJk",
+          "description": "Introdução React 02",
+          "isComplete": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "parent_module_id": "3",
+      "name": "PlayList 03",
+      "isComplete": false,
+      "videos": [
+        {
+          "id": "1",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=Ejkb_YpuHWs",
+          "description": "Inicio Curso Html e Css",
+          "isComplete": false
+        },
+        {
+          "id": "2",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=jgQjeqGRdgA",
+          "description": "O que vamos Aprender?",
+          "isComplete": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "parent_module_id": "4",
+      "name": "PlayList 04",
+      "isComplete": false,
+      "videos": [
+        {
+          "id": "1",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=uzEhd3Lugik",
+          "description": "Conhecendo JavaScript",
+          "isComplete": false
+        },
+        {
+          "id": "2",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=Ptbk2af68e8",
+          "description": "O que JavaScript é capaz?",
+          "isComplete": false
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "parent_module_id": "5",
+      "name": "PlayList 05",
+      "isComplete": false,
+      "videos": [
+        {
+          "id": "1",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=QYH-vX_7Cfo",
+          "description": "NPM",
+          "isComplete": false
+        },
+        {
+          "id": "2",
+          "duration": "",
+          "url": "https://www.youtube.com/watch?v=g9_6KmiBISk",
+          "description": "YARN",
+          "isComplete": false
         }
       ]
     }

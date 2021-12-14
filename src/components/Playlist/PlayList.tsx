@@ -1,34 +1,28 @@
 import { Component } from 'react'
 import Videos from '../Videos/Videos'
-import { List } from '../Playlist/style'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getPlayList } from '../../actions/playListActions'
-
 
 type VideoType = {
   id: string;
   duration: string;
   url: string;
   description: string;
-
 }
-
 type PlayListType = {
   moduleId: string;
   name: string;
   videos: VideoType[];
   url: string;
   id: string;
-
-
 }
-
 type PlayListProps = {
   moduleId: string;
   playList: PlayListType[];
   getPlayList: (moduleId: string) => void;
 }
+
 
 class PlayList extends Component<PlayListProps> {
 
@@ -37,38 +31,31 @@ class PlayList extends Component<PlayListProps> {
       this.props.getPlayList(this.props.moduleId)
     }
   }
+  renderVideos() {
+
+    return this.props.playList.map((item: PlayListType) => {
+      return item.videos.map((video: VideoType) => {
+        return <div>
+          <Videos key={video.id} videoURL={video.url} description={video.description} />
+        </div>
+
+      })
+    })
+  }
   render() {
-    const playList = this.props.playList || [];
     return (
-
       <div>
-        <List>
-          {playList.length > 0 ?
-            <ul>
-              {playList.map((playList: PlayListType, index) => (
-                <li key={playList.id} >
-                  {playList.name}
-                  <Videos videoURL={playList.videos[index].url} />
-                </li>
-              ))}
-            </ul>
-
-            : false
-          }
-        </List>
+        {this.renderVideos()}
       </div>
-
     )
   }
 }
-
 const mapStateToProps = (state: any) => (
   {
     playList: state.playListReducer.playList,
     moduleId: state.moduleListReducer.moduleId
   }
 )
-
 const mapDispatchToProps = (dispatch: any) => bindActionCreators({ getPlayList }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayList)
